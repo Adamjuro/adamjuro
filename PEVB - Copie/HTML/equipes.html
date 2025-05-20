@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nos Équipes - PEVB</title>
+  <link rel="stylesheet" href="../CSS/equipes.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="hero">
+    <nav class="navbar">
+      <div class="logo">🏠</div>
+      <ul class="nav-links">
+        <li><a href="site.html">Accueil</a></li>
+        <li><a href="#">Boutique</a></li>
+        <li><a href="equipes.html">Equipes</a></li>
+        <li><a href="actualites.html">Evenements</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Connexion</a></li>
+      </ul>
+      <button class="menu-btn" id="menu-btn">MENU</button>
+
+    </nav>
+
+  <main class="equipe-wrapper">
+    <div class="thumbnail left-thumb" onclick="showTeam(currentTeam - 1)">‹</div>
+
+    <div class="main-card">
+      <div class="left-side">
+        <div class="image-box" id="team-image">
+          <img src="../assets/SM2.PNG" alt="Équipe" />
+        </div>
+        <div class="description-box" id="team-description">
+          <h3>SM1 - Nationale 3</h3>
+          <p>Notre équipe phare qui évolue en N3.</p>
+        </div>
+      </div>
+      <div class="iframe-box" id="team-iframe">
+        <div class="responsive-iframe-container">
+        <iframe src="https://www.ffvbbeach.org/ffvbapp/resu/seniors/2024-2025/index_3mf.htm" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="thumbnail right-thumb" onclick="showTeam(currentTeam + 1)">›</div>
+  </main>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+  
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+      menuBtn.classList.toggle('open');
+    });
+    const teams = [
+      {
+        img: "assets/senior1.jpg",
+        name: "SM1 - Nationale 3",
+        desc: "Notre équipe phare qui évolue en N3.",
+        iframe: "https://www.ffvbbeach.org/ffvbapp/resu/seniors/2024-2025/index_3mf.htm"
+      },
+      {
+        img: "../assets/SM2.PNG",
+        name: "SM2 - Régionale",
+        desc: "Équipe solide qui forme le vivier de la N3.",
+        iframe: "https://www.ffvbbeach.org/ffvbapp/resu/vbspo_calendrier.php?saison=2024/2025&codent=LIIDF&poule=RME"
+      },
+      {
+        img: "../assets/SM2.PNG",
+        name: "SM3 - Départementale",
+        desc: "Loisir et compétition pour les joueurs passionnés.",
+        iframe: "https://www.ffvbbeach.org/ffvbapp/resu/vbspo_calendrier.php?saison=2024/2025&codent=LIIDF&poule=RME"
+      },
+      {
+        img: "../assets/SM2.PNG",
+        name: "SF1 - N3",
+        desc: "Notre équipe féminine en compétition nationale.",
+        iframe: "https://www.ffvbbeach.org/ffvbapp/resu/vbspo_calendrier.php?saison=2024/2025&codent=LIIDF&poule=PFA"
+      }
+    ];
+
+    let currentTeam = 0;
+
+    function showTeam(index) {
+      if (index < 0) index = teams.length - 1;
+      if (index >= teams.length) index = 0;
+      currentTeam = index;
+
+      document.getElementById("team-image").innerHTML = `<img src="${teams[index].img}" alt="${teams[index].name}" />`;
+      document.getElementById("team-description").innerHTML = `<h3>${teams[index].name}</h3><p>${teams[index].desc}</p>`;
+      document.getElementById("team-iframe").innerHTML = `<iframe src="${teams[index].iframe}" frameborder="0" allowfullscreen></iframe>`;
+    }
+  </script>
+  </header>
+</body>
+</html>
