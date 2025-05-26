@@ -3,6 +3,13 @@ body {
   margin: 0;
   background-color: #f9f9f9;
 }
+.nav-links a:hover {
+  background: #ddd;
+  color: #00aaff;
+  text-shadow: 0 0 10px rgba(0, 170, 255, 0.6);
+  transform: scale(1.05);
+}
+
 
 /* Grille d'événements */
 main.events-grid {
@@ -101,5 +108,21 @@ main.events-grid {
 
   .event-details p {
     font-size: 0.9rem;
+  }
+}
+@media (min-width: 901px) {
+  .navbar {
+    justify-content: center;
+    gap: 3rem; /* espace entre logo et liens */
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .logo {
+    margin-right: auto; /* pousse le logo à gauche */
+  }
+
+  .menu-btn {
+    display: none;
   }
 }

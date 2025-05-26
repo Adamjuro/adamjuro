@@ -85,15 +85,63 @@
     let currentTeam = 0;
 
     function showTeam(index) {
-      if (index < 0) index = teams.length - 1;
-      if (index >= teams.length) index = 0;
-      currentTeam = index;
+  if (index < 0) index = teams.length - 1;
+  if (index >= teams.length) index = 0;
 
-      document.getElementById("team-image").innerHTML = `<img src="${teams[index].img}" alt="${teams[index].name}" />`;
-      document.getElementById("team-description").innerHTML = `<h3>${teams[index].name}</h3><p>${teams[index].desc}</p>`;
-      document.getElementById("team-iframe").innerHTML = `<iframe src="${teams[index].iframe}" frameborder="0" allowfullscreen></iframe>`;
-    }
+  const card = document.querySelector('.main-card');
+  card.classList.add('animate-out');
+
+  setTimeout(() => {
+    // Mise à jour des contenus
+    document.getElementById("team-image").innerHTML = `<img src="${teams[index].img}" alt="${teams[index].name}" />`;
+    document.getElementById("team-description").innerHTML = `<h3>${teams[index].name}</h3><p>${teams[index].desc}</p>`;
+    document.getElementById("team-iframe").innerHTML = `
+      <div class="responsive-iframe-container">
+        <iframe src="${teams[index].iframe}" allowfullscreen></iframe>
+      </div>`;
+
+    currentTeam = index;
+
+    // Fin d'animation sortante → animation entrante
+    card.classList.remove('animate-out');
+    card.classList.add('animate-in');
+
+    // Nettoyage après animation
+    setTimeout(() => {
+      card.classList.remove('animate-in');
+    }, 300);
+  }, 300);
+}
+
   </script>
+  <script>
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  const swipeZone = document.querySelector('.main-card');
+
+  swipeZone.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  });
+
+  swipeZone.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipeGesture();
+  });
+
+  function handleSwipeGesture() {
+    const swipeDistance = touchEndX - touchStartX;
+
+    if (swipeDistance > 50) {
+      // Swipe vers la droite → équipe précédente
+      showTeam(currentTeam - 1);
+    } else if (swipeDistance < -50) {
+      // Swipe vers la gauche → équipe suivante
+      showTeam(currentTeam + 1);
+    }
+  }
+</script>
+
   </header>
 </body>
 </html>
