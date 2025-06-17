@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boutique - PEVB</title>
+  <link rel="stylesheet" href="../CSS/boutique.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="hero">
+  <nav class="navbar">
+  <div class="logo"><a href="site.html">🏠</a></div>
+  <ul class="nav-links">
+    <li><a href="site.html">Accueil</a></li>
+    <li><a href="boutique.html">Boutique</a></li>
+    <li><a href="equipes.html">Equipes</a></li>
+    <li><a href="actualites.html">Evenements</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="#">Connexion</a></li>
+  </ul>
+  <button class="menu-btn" id="menu-btn">MENU</button>
+</nav>
+
+
+  
+    <div class="left">
+      <h1>Boutique Officielle</h1>
+      <p>Commandez vos équipements PEVB dès maintenant.</p>
+    </div>
+  
+
+  <section class="teams">
+    <div class="card">
+        <img src="../assets/sweatH.jpg" alt="Maillot PEVB" data-full="../assets/sweatH.jpg">
+        <h3>Sweat Homme / Femme</h3>
+        <p>Avec flocage prénom + numéro</p>
+        <strong>30 €</strong>
+    </div>
+
+    <div class="card">
+        <img src="../assets/vestF.jpg" alt="Maillot PEVB" data-full="../assets/vestF.jpg">
+         <h3>Veste Femme</h3>
+        <strong>42 €</strong>
+    </div>
+    <div class="card">
+      <img src="../assets/vestH.jpg" alt="Maillot PEVB" data-full="../assets/vestH.jpg">
+      <h3>Veste Homme</h3>
+      <strong>42 €</strong>
+    </div>
+    <div class="card">
+      <img src="../assets/sweatF.jpg" alt="Maillot PEVB" data-full="../assets/sweatF.jpg">
+      <h3>Sweat Gris à Capuche</h3>
+      <p>Avec logo brodé</p>
+      <strong>35 €</strong>
+    </div>
+    <div class="card">
+      <img src="../assets/bas.jpg" alt="Maillot PEVB" data-full="../assets/bas.jpg">
+      <h3>Jogging</h3>
+      <strong>30 €</strong>
+    </div>
+    <div class="card">
+      <img src="../assets/polo.jpg" alt="Maillot PEVB" data-full="../assets/polo.jpg">
+      <h3>Polo Noir</h3>
+      <strong>20 €</strong>
+    </div>
+    <div class="card">
+      <img src="../assets/sac a dos.jpg" alt="Maillot PEVB" data-full="../assets/sac a dos.jpg">
+      <h3>Sac à Dos</h3>
+      <p>Avec logo PEVB</p>
+      <strong>25 €</strong>
+    </div>
+    <div class="card">
+      <img src="../assets/tshirt.jpg" alt="Maillot PEVB" data-full="../assets/tshirt.jpg">
+      <h3>T-shirt</h3>
+      <p>Avec logo PEVB</p>
+      <strong>15 €</strong>
+    </div>
+    <div class="card">
+      <img src="../assets/manchon.jpg" alt="Maillot PEVB" data-full="../assets/manchon.jpg">
+      <h3>Manchons</h3>
+      <p>Avec logo PEVB</p>
+      <strong>15 €</strong>
+    </div>
+    <div class="card">
+      <img src="../assets/backpack.jpg" alt="Maillot PEVB" data-full="../assets/backpack.jpg">
+      <h3>Backpack</h3>
+      <p>Avec logo PEVB</p>
+      <strong>35 €</strong>
+    </div>
+    <div class="card">
+      <img src="../assets/smallbag.jpg" alt="Maillot PEVB" data-full="../assets/smallbag.jpg">
+      <h3>Small Bag</h3>
+      <p>Avec logo PEVB</p>
+      <strong>12 €</strong>
+    </div>
+    <div class="card">
+      <img src="../assets/leggingF.png" alt="Maillot PEVB" data-full="../assets/legg.jpg">
+      <h3>Legging Long</h3>
+      <p>Avec logo PEVB</p>
+      <strong>30 €</strong>
+    </div>
+  </section>
+
+  <section style="text-align:center; padding: 2rem;">
+    <p>Les commandes se font directement auprès d’un membre du bureau.</p>
+    <a href="#" class="cta-btn">Nous contacter</a>
+  </section>
+  </header>
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+      menuBtn.classList.toggle('open');
+    });
+  </script>
+  <div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:1000;">
+    <img id="lightbox-img" src="" style="max-width:90%; max-height:90%;">
+  </div>
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+  
+    document.querySelectorAll(".card img").forEach(img => {
+      img.style.cursor = "pointer";
+      img.addEventListener("click", () => {
+        lightboxImg.src = img.src;
+        lightbox.style.display = "flex";
+      });
+    });
+  
+    lightbox.addEventListener("click", () => {
+      lightbox.style.display = "none";
+    });
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - PEVB</title>
+  <link rel="stylesheet" href="../CSS/contact.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="contact-header">
+    <nav class="navbar">
+      <div class="logo"><a href="site.html">🏠</a></div>
+      <ul class="nav-links">
+        <li><a href="site.html">Accueil</a></li>
+        <li><a href="boutique.html">Boutique</a></li>
+        <li><a href="equipes.html">Equipes</a></li>
+        <li><a href="actualites.html">Evenements</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Connexion</a></li>
+      </ul>
+      <button class="menu-btn" id="menu-btn">MENU</button>
+    </nav>
+
+  <main class="contact-main">
+    <section class="team-grid">
+
+      <!-- Président -->
+      <div class="contact-card">
+        <img src="../assets/president.jpg" alt="Olivier Magny">
+        <div class="info">
+          <h3>Olivier MAGNY</h3>
+          <p>Président</p>
+          <p>📧 <a href="mailto:pevb91@gmail.com">pevb91@gmail.com</a></p>
+          <p>📞 <a href="tel:+33611224210">+33 6 11 22 42 10</a></p>
+        </div>
+      </div>
+    
+      <!-- Trésorière -->
+      <div class="contact-card">
+        <img src="../assets/tresoriere.png" alt="Noëlle Nguyen">
+        <div class="info">
+          <h3>Noëlle NGUYEN</h3>
+          <p>Trésorière</p>
+          <p>📧 <a href="mailto:pevb91@gmail.com">pevb91@gmail.com</a></p>
+        </div>
+      </div>
+    
+      <!-- Secrétaire -->
+      <div class="contact-card">
+        <img src="../assets/secretariat.png" alt="Louisiane Cherré">
+        <div class="info">
+          <h3>Louisiane Cherré</h3>
+          <p>Secrétaire</p>
+          <p>📧 <a href="mailto:pevb91@gmail.com">pevb91@gmail.com</a></p>
+          <p>📞 <a href="tel:+33648799084">+33 6 48 79 90 84</a></p>
+        </div>
+      </div>
+    
+      <!-- Comité directeur sur 2 colonnes -->
+      <div class="contact-card wide">
+        <img src="../assets/equipe.png" alt="Comité Directeur">
+        <div class="info">
+          <h3>Comité Directeur</h3>
+          <p>
+            Charlène LANGUET, Sandrine BAUMARD, Stéphanie JAMMET, Clara GENIN,<br>
+            Cosimo MARTORANA, Eric MASCARENHAS, David BONNET, Dominique STEPHAN,<br>
+            Laurent BOITEL, Morgan ROPARS, Nicolas BREZENAC, Julie Thibault, Yohan Née
+          </p>
+          <p>📧 <a href="mailto:pevb91@gmail.com">pevb91@gmail.com</a></p>
+        </div>
+      </div>
+    
+    </section>
+    
+    
+  </main>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+      menuBtn.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

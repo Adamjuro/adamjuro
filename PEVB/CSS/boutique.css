@@ -1,0 +1,410 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body, html {
+  background: url("../assets/header.png") no-repeat center center fixed;
+  background-size: cover;
+  background-color: #000;
+  color: white;
+  overflow-x: hidden; /* bloque scroll horizontal uniquement */
+}
+
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  background: white;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  transition: all 0.3s;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover {
+  background: #ddd;
+  color: #00aaff;
+  text-shadow: 0 0 10px rgba(0, 170, 255, 0.6);
+  transform: scale(1.05);
+}
+
+
+.menu-btn {
+  background: white;
+  border: none;
+  border-radius: 30px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex: 1;
+  padding: 2rem 0;
+}
+
+.left {
+  text-align: center;
+  margin: 2rem auto 0;
+  max-width: 700px;
+  padding: 0 1rem;
+}
+
+.left h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.left p {
+  font-size: 1.1rem;
+  color: #ddd;
+}
+
+.cta-btn {
+  display: inline-block;
+  background: white;
+  color: black;
+  padding: 0.7rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .left {
+    max-width: 100%;
+  }
+
+  .left h1 {
+    font-size: 2.2rem;
+  }
+
+  .right {
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  
+  .navbar {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .nav-links a {
+    background: transparent;
+    color: white;
+    padding: 0.5rem 0;
+    border-radius: 0;
+  }
+
+  .nav-links a:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .menu-btn {
+    background: transparent;
+    color: black;
+    border: 1px solid white;
+  }
+
+  .cta-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 1rem;
+  }
+
+  .left h1 {
+    font-size: 1.8rem;
+  }
+
+  
+
+  .arrow {
+    font-size: 1.2rem;
+  }
+}
+/* Cacher le menu sur mobile par défaut */
+@media (max-width: 900px) {
+  
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    transform: translateY(-100%);
+    transition: transform 0.4s ease-in-out;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .nav-links.show {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-links li {
+    margin: 1.5rem 0;
+  }
+
+  .nav-links a {
+    font-size: 1.5rem;
+    color: white;
+    background: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0;
+  }
+
+  .menu-btn {
+    z-index: 1000;
+    background: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .menu-btn.open {
+    background: #ccc;
+  }
+}
+
+
+
+@media (min-width: 901px) {
+  .navbar {
+    justify-content: center;
+    gap: 3rem; /* espace entre logo et liens */
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .logo {
+    margin-right: auto; /* pousse le logo à gauche */
+  }
+
+  .menu-btn {
+    display: none;
+  }
+}
+
+.teams {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.3);
+  color: #000;
+  padding: 1.5rem;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+.card img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: contain;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.card strong {
+  display: block;
+  margin-top: 0.8rem;
+  font-size: 1.1rem;
+  color: #0077ff;
+}
+
+.command-info {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1rem;
+  color: white;
+}
+
+.cta-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.7rem 1.5rem;
+  background: white;
+  color: black;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.cta-btn:hover {
+  background: #ddd;
+}
+
+/* -------- RESPONSIVE BOUTIQUE (hors nav) -------- */
+
+@media (max-width: 1024px) {
+  .teams {
+    padding: 2rem 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .card {
+    padding: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .left {
+    padding: 0 1rem;
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .left h1 {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  .left p {
+    font-size: 1rem;
+  }
+
+  .teams {
+    grid-template-columns: 1fr;
+    padding: 1.5rem 1rem;
+  }
+
+  .card img {
+    max-height: 160px;
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+  }
+
+  .card strong {
+    font-size: 1rem;
+  }
+
+  .cta-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .left h1 {
+    font-size: 1.6rem;
+  }
+
+  .left p {
+    font-size: 0.95rem;
+  }
+
+  .teams {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .card img {
+    max-height: 140px;
+  }
+
+  .cta-btn {
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+  }
+}

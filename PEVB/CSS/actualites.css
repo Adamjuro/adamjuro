@@ -3,6 +3,13 @@ body {
   margin: 0;
   background-color: #f9f9f9;
 }
+body, html {
+  background: url("../assets/header.png") no-repeat center center fixed;
+  background-size: cover;
+  background-color: #000;
+  color: white;
+  overflow-x: hidden; /* bloque scroll horizontal uniquement */
+}
 .nav-links a:hover {
   background: #ddd;
   color: #00aaff;

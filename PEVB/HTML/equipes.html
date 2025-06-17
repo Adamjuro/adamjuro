@@ -11,13 +11,13 @@
 
   <header class="hero">
     <nav class="navbar">
-      <div class="logo">🏠</div>
+      <div class="logo"><a href="site.html">🏠</a></div>
       <ul class="nav-links">
         <li><a href="site.html">Accueil</a></li>
-        <li><a href="#">Boutique</a></li>
+        <li><a href="boutique.html">Boutique</a></li>
         <li><a href="equipes.html">Equipes</a></li>
         <li><a href="actualites.html">Evenements</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="contact.html">Contact</a></li>
         <li><a href="#">Connexion</a></li>
       </ul>
       <button class="menu-btn" id="menu-btn">MENU</button>
@@ -56,31 +56,44 @@
       menuBtn.classList.toggle('open');
     });
     const teams = [
-      {
-        img: "assets/senior1.jpg",
-        name: "SM1 - Nationale 3",
-        desc: "Notre équipe phare qui évolue en N3.",
-        iframe: "https://www.ffvbbeach.org/ffvbapp/resu/seniors/2024-2025/index_3mf.htm"
-      },
-      {
-        img: "../assets/SM2.PNG",
-        name: "SM2 - Régionale",
-        desc: "Équipe solide qui forme le vivier de la N3.",
-        iframe: "https://www.ffvbbeach.org/ffvbapp/resu/vbspo_calendrier.php?saison=2024/2025&codent=LIIDF&poule=RME"
-      },
-      {
-        img: "../assets/SM2.PNG",
-        name: "SM3 - Départementale",
-        desc: "Loisir et compétition pour les joueurs passionnés.",
-        iframe: "https://www.ffvbbeach.org/ffvbapp/resu/vbspo_calendrier.php?saison=2024/2025&codent=LIIDF&poule=RME"
-      },
-      {
-        img: "../assets/SM2.PNG",
-        name: "SF1 - N3",
-        desc: "Notre équipe féminine en compétition nationale.",
-        iframe: "https://www.ffvbbeach.org/ffvbapp/resu/vbspo_calendrier.php?saison=2024/2025&codent=LIIDF&poule=PFA"
-      }
-    ];
+  {
+    img: "assets/senior1.jpg",
+    name: "SM1 - Nationale 3",
+    desc: "Notre équipe phare qui évolue en N3, Coach : Zitoune",
+    iframe: "https://www.ffvbbeach.org/ffvbapp/resu/seniors/2024-2025/index_3mf.htm"
+  },
+  {
+    img: "../assets/SM2.PNG",
+    name: "SM2 - Régionale",
+    desc: "Équipe solide qui forme le vivier de la N3, Coach : Nico",
+    iframe: "https://www.ffvbbeach.org/ffvbapp/resu/vbspo_calendrier.php?saison=2024/2025&codent=LIIDF&poule=RME"
+  },
+  {
+    img: "../assets/SM2.PNG",
+    name: "SM3 - Départementale",
+    desc: "Loisir et compétition pour les joueurs passionnés, Coach : Miguel",
+    iframe: "https://www.ffvbbeach.org/ffvbapp/resu/vbspo_calendrier.php?saison=2024/2025&codent=LIIDF&poule=RME"
+  },
+  {
+    img: "../assets/SM2.PNG",
+    name: "SF1 - N3",
+    desc: "Notre équipe féminine en compétition nationale, Coach : Thibault Lapeyre",
+    iframe: "https://www.ffvbbeach.org/ffvbapp/resu/vbspo_calendrier.php?saison=2024/2025&codent=LIIDF&poule=PFA"
+  },
+  {
+    img: "../assets/SF2.PNG",
+    name: "SF2 - Pré Nationale",
+    desc: "L'équipe SF2 évolue au niveau Pré Nationale et forme les talents féminins montants, Coach : Samath",
+    iframe: "https://www.ffvbbeach.org/ffvbapp/resu/vbspo_calendrier.php?saison=2024/2025&codent=LIIDF&poule=PNF"
+  },
+  {
+    img: "../assets/SF3.PNG",
+    name: "SF3 - Départementale",
+    desc: "La SF3 accueille les joueuses loisirs et compétitrices locales, Coach : Mica",
+    iframe: "https://www.ffvbbeach.org/ffvbapp/resu/vbspo_calendrier.php?saison=2024/2025&codent=LIIDF&poule=DFB"
+  }
+];
+
 
     let currentTeam = 0;
 
